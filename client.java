@@ -17,6 +17,7 @@ public class client{
         byte[] arr= toBytes("message hello world");
 (
         Watcher w= new wathcerhandler(); 
+
         if (zoo.exsists ("/clients",false)==null) {
         zoo.create("/clients",null,ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);//null is the data	
         }
@@ -24,7 +25,7 @@ public class client{
         zoo.create("/clients/node1",arr,ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);//null is the data	
         }
         else {
-        	byte[]bs = zoo.getData("/clients/node1",false,null);
+        	byte[]bs = zoo.getData("/clients/node1",w,null);//watcher added 
         	String s = new String (bs,"UTF_8");
         	System.out.println(s);
         }
