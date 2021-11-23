@@ -11,7 +11,7 @@ public class client{
         return i.getBytes();
     }
    public static void main(String[] args) throws Exception{
-       Zookeeper zoo= new  Zookeeper("ipaddress",500,null);//input!! ip adress:portnumber, null== watcher
+       Zookeeper zoo= new  Zookeeper("127.0.0.1:2181",500,null);//input!! ip adress:portnumber, null== watcher
         //create znode 
         byte[] arr= toBytes("message");
 
