@@ -15,7 +15,6 @@ public class client{
        Zookeeper zoo= new  Zookeeper("127.0.0.1:2181",500,null);//input!! ip adress:portnumber, null== watcher
         //create znode 
         byte[] arr= toBytes("message hello world");
-(
         Watcher w= new wathcerhandler(); 
 
         if (zoo.exsists ("/clients",false)==null) {
